@@ -6,6 +6,7 @@ pipeline {
         }
     }
     environment {
+        // nn
         CI = 'true'
     }
     stages {
