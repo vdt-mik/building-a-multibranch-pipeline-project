@@ -5,14 +5,22 @@ pipeline {
         CI = 'true'
     }
     stages {
-        stage('Build') {
-            steps {
-                echo "build"
+        // stage('Build') {
+        //     steps {
+        //         echo "build"
+        //     }
+        // }
+        // stage('Test') {
+        //     steps {
+        //         echo "tests"
+        //     }
+        // }
+        stage('PR') {
+            when {
+                changeRequest()
             }
-        }
-        stage('Test') {
             steps {
-                echo "tests"
+                echo "tests development PRRRRR"
             }
         }
         stage('Deliver for development') {
