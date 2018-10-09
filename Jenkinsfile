@@ -37,7 +37,7 @@ pipeline {
             }
             steps {
                 script {
-                    echo "tests release............................................"
+                    echo "tests release............................................1"
                     def scmVars = checkout scm
                     def branchName = scmVars.GIT_BRANCH
                     sh("printenv")
