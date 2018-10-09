@@ -20,7 +20,7 @@ pipeline {
                 changeRequest()
             }
             steps {
-                echo "tests development PRRRRR"
+                echo "tests development PRRRRRr"
             }
         }
         stage('PR') {
