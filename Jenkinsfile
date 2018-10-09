@@ -18,9 +18,10 @@ pipeline {
         stage('PR') {
             when {
                 anyOf {
-                    changeRequest();
+                    changeRequest()
                     branch '**/release-*';
-                    branch 'development'
+                    branch 'development';
+                    branch '**/DO-*'
                 }
             }
             steps {
@@ -36,7 +37,7 @@ pipeline {
             }
             steps {
                 script {
-                    echo "tests release............................................"
+                    echo "tests release............................................1"
                     def scmVars = checkout scm
                     def branchName = scmVars.GIT_BRANCH
                     sh("printenv")
