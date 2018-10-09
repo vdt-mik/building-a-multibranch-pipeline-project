@@ -19,7 +19,7 @@ pipeline {
             when {
                 anyOf {
                     changeRequest()
-                    branch '**/release-*';
+                    branch '**/release-*'
                     branch 'development';
                     branch '**/DO-*'
                 }
