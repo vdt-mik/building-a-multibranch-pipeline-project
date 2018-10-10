@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    if ($setBranch != null) {
+                    if (env.setBranch) {
                     sh "echo $setBranch"
                     echo "Branch exist.............///////////////..............................................."
                     } else {
