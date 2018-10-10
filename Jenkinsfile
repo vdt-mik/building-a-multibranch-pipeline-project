@@ -6,13 +6,23 @@ pipeline {
     }
     stages {
         stage('Build') {
+            when {
+                anyOf {
+                    expression { ${setBranch} != null }
+                }
+            }
             steps {
-                echo "build"
+                echo "Branch exist.............///////////////..............................................."
             }
         }
         stage('Test') {
+            when {
+                anyOf {
+                    expression { ${setTag} != null }
+                }
+            }
             steps {
-                echo "tests"
+                echo "SetTag exist.............///////////////..............................................."
             }
         }
         stage('PR') {
