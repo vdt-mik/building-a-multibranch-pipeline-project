@@ -8,7 +8,7 @@ pipeline {
         stage('Build') {
             when {
                 anyOf {
-                    expression { ${setBranch} != null }
+                    expression { setBranch != null }
                 }
             }
             steps {
@@ -18,7 +18,7 @@ pipeline {
         stage('Test') {
             when {
                 anyOf {
-                    expression { ${setTag} != null }
+                    expression { setTag != null }
                 }
             }
             steps {
