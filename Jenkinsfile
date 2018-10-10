@@ -6,25 +6,16 @@ pipeline {
     }
     stages {
         stage('Build') {
-            when {
-                allOf {
-                    expression { env.setBranch != null }
-                }
-            }
             steps {
-                sh "echo $setBranch"
-                echo "Branch exist.............///////////////..............................................."
-            }
-        }
-        stage('Test') {
-            when {
-                allOf {
-                    expression { env.setTag != null }
+                script {
+                    if ($setBranch != null) {
+                    sh "echo $setBranch"
+                    echo "Branch exist.............///////////////..............................................."
+                    } else {
+                        sh "echo $setTag"
+                        echo "SetTag exist.............///////////////..............................................."
+                    }
                 }
-            }
-            steps {
-                sh "echo $setTag"
-                echo "SetTag exist.............///////////////..............................................."
             }
         }
         stage('PR') {
