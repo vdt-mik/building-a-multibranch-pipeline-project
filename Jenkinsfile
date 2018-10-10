@@ -12,8 +12,12 @@ pipeline {
                     sh "echo $setBranch"
                     echo "Branch exist.............///////////////..............................................."
                     } else {
-                        sh "echo $setTag"
-                        echo "SetTag exist.............///////////////..............................................."
+                          if (env.setTag) {
+                              sh "echo $setTag"
+                              echo "SetTag exist.............///////////////..............................................."
+                          } else {
+                              echo "FAIIIIIILLLLIILILLILIILLILILILILIILLILILILILILILILI"
+                          }
                     }
                 }
             }
