@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             when {
-                anyOf {
+                allOf {
                     expression { env.setBranch != null }
                 }
             }
@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Test') {
             when {
-                anyOf {
+                allOf {
                     expression { env.setTag != null }
                 }
             }
